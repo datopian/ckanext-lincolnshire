@@ -1,16 +1,17 @@
+{% resource 'lincolnshire/stats_pad.css' %}
 {% set stats = h.get_site_statistics() %}
 
 <div class="box stats">
   <div class="inner">
     <h3>{{ _('{site_title} statistics').format(site_title=g.site_title) }}</h3>
     <ul>
-      <li>
+      <li class="center_li">
         <a href="{{ h.url_for(controller='package', action='search') }}">
           <b>{{ h.SI_number_span(stats.dataset_count) }}</b>
           {{ ungettext('dataset', 'datasets', stats.dataset_count) }}
         </a>
       </li>
-      <li>
+      <li class="center_li">
         <a href="{{ h.url_for(controller='group', action='index') }}">
           <b>{{ h.SI_number_span(stats.group_count) }}</b>
           {{ ungettext('group', 'groups', stats.group_count) }}
